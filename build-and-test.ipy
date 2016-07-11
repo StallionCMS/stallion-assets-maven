@@ -1,7 +1,7 @@
 #!/usr/local/bin/ipython
 import os
 import sys
-!mvn -e compile package install
+!mvn -e clean compile package install
 if _exit_code != 0:
     sys.exit(_exit_code)
 os.chdir("/Users/pfitzsimmons/st/assets-demo")

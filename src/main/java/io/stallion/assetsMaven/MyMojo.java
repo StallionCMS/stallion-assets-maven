@@ -1,4 +1,4 @@
-package io.stallion;
+package io.stallion.assetsMaven;
 
 /*
  * Copyright 2001-2005 The Apache Software Foundation.
@@ -22,7 +22,6 @@ import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
-import org.apache.maven.plugins.annotations.ResolutionScope;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -61,7 +60,7 @@ public class MyMojo
         }
 
 
-        new ProcessAssetBundles().process(outputDirectory);
+        new CompileAssetBundles().compile(new File(outputDirectory.getAbsolutePath() + "/classes/assets/"));
 
         File touch = new File( f, "touch.txt" );
 

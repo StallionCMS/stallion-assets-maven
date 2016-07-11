@@ -1,0 +1,17 @@
+#!/usr/local/bin/ipython
+import os
+import sys
+!mvn -e compile package install
+if _exit_code != 0:
+    sys.exit(_exit_code)
+os.chdir("/Users/pfitzsimmons/st/assets-demo")
+!mvn -e clean compile process-sources exec:java -Dexec.mainClass=io.stallion.App
+if _exit_code != 0:
+    sys.exit(_exit_code)
+!ls -la /Users/pfitzsimmons/st/assets-demo/target
+!ls -la /Users/pfitzsimmons/st/assets-demo/target/classes
+!tail /Users/pfitzsimmons/st/assets-demo/target/touch.txt
+print "BUNDLE .js file"
+!tail -n 500 /Users/pfitzsimmons/st/assets-demo/target/classes/assets/site.bundle.js
+print "BUNDLE CSS File"
+!tail -n 500 /Users/pfitzsimmons/st/assets-demo/target/classes/assets/site.bundle.css

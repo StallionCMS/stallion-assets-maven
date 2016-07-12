@@ -40,6 +40,12 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.10</version>
+    </dependency>
+
+    <dependency>
       <groupId>com.google.javascript</groupId>
       <artifactId>closure-compiler</artifactId>
       <version>v20160208</version>
@@ -79,6 +85,16 @@
 
     </plugins>
   </build>
+  <distributionManagement>
+    <downloadUrl>http://mvn.stallion.io/repo</downloadUrl>
+    <repository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>stallion-repo</id>
+      <name>Stallion Software Maven Repository</name>
+      <url>scp://mvn.stallion.io/usr/share/maven-repo/</url>
+      <layout>default</layout>
+    </repository>
+  </distributionManagement>
   <profiles>
     <profile>
       <id>run-its</id>

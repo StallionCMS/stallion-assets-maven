@@ -31,12 +31,15 @@ public class AssetBundlingMojo
         throws MojoExecutionException
     {
         File f = outputDirectory;
-
+        System.out.println("Running AssetBundlingMojo for " + outputDirectory);
         if (!f.exists()) {
             f.mkdirs();
         }
-
-        new CompileAssetBundles().compile(new File(outputDirectory.getAbsolutePath() + "/classes/assets/"));
+        try {
+            new CompileAssetBundles().compile(new File(outputDirectory.getAbsolutePath() + "/classes/assets/"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
 
     }

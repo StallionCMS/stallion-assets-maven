@@ -84,6 +84,13 @@
       </plugin>
 
     </plugins>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-ssh</artifactId>
+        <version>2.4</version>
+      </extension>
+    </extensions>
   </build>
   <distributionManagement>
     <downloadUrl>http://mvn.stallion.io/repo</downloadUrl>
@@ -95,6 +102,18 @@
       <layout>default</layout>
     </repository>
   </distributionManagement>
+  <repositories>
+    <repository>
+    <id>stallion-repo</id>
+    <url>http://mvn.stallion.io/repo/</url>
+    <snapshots>
+      <enabled>true</enabled>
+    </snapshots>
+    <releases>
+      <enabled>true</enabled>
+    </releases>
+  </repository>
+  </repositories>
   <profiles>
     <profile>
       <id>run-its</id>

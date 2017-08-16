@@ -36,7 +36,7 @@ public class CompileAssetBundles {
             // If no changes, and a minified file exists, no need to minify again
             if (newMd5.equals(originalMd5) && new File(bundle.getBundleFile().getAbsolutePath() + ".min.js").exists()) {
                 System.out.println("No changes to the combined asset bundle, skipping minification, for " + bundle.getBundleFile().getAbsolutePath());
-                return;
+                continue;
             }
 
             for(AssetFile af: bundle.getFiles()) {
